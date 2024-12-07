@@ -1,6 +1,6 @@
 export function HomeHero() {
   return (
-    <div className="relative isolate pt-14">
+    <div className="relative isolate overflow-hidden pt-14">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
