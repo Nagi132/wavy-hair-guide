@@ -1,27 +1,32 @@
-'use client'
+import type { Metadata } from 'next';
+import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
+import { ThemeProvider } from './providers';
+import { Analytics } from '@vercel/analytics/react';
+import './globals.css';
 
-import { ThemeProvider } from 'next-themes'
-import { Analytics } from '@vercel/analytics/react'
-import './globals.css'
-
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Wavy Hair Guide',
-  description: 'Your complete guide to wavy hair care, products, and routines',
-}
+  description: 'Your complete guide to wavy hair care',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
           <Analytics />
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
