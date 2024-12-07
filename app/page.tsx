@@ -1,11 +1,13 @@
 import { HomeHero } from '@/components/home/hero';
-import { NewsletterBanner } from '@/components/newsletter-banner';
 import { FeaturedPosts } from '@/components/blog/featured-posts';
+import { NewsletterBanner } from '@/components/newsletter-banner';
+import { ProductShowcase } from '@/components/products/product-showcase';
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="flex flex-col gap-12">
       <HomeHero />
+      <ProductShowcase />
       <FeaturedPosts />
       <NewsletterBanner />
     </div>
